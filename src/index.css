@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+  
+  body {
+    font-family: var(--font-sans);
+    background-color: #041329;
+    color: #d6e3ff;
+  }
+  
+  code, kbd, samp, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Custom Cyber Aesthetics */
+.cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(95, 251, 214, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(95, 251, 214, 0.04) 1px, transparent 1px);
+}
+
+.glass-panel {
+  background: rgba(17, 32, 54, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(60, 74, 69, 0.4);
+}
+
+.glass-card {
+  background: rgba(13, 28, 50, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(60, 74, 69, 0.35);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(95, 251, 214, 0.35);
+}
+
+.glow-cyan-sm {
+  box-shadow: 0 0 10px rgba(95, 251, 214, 0.25);
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+}
+
+.pulse-ring {
+  animation: pulseRing 2.4s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes scanLine {
+  0% { top: 0%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.scan-line {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #5ffbd6, transparent);
+  box-shadow: 0 0 10px rgba(95, 251, 214, 0.8);
+  animation: scanLine 2.5s ease-in-out infinite;
+}
+
+@keyframes dataDrift {
+  0% { transform: translateY(100%); opacity: 0; }
+  15% { opacity: 0.25; }
+  85% { opacity: 0.25; }
+  100% { transform: translateY(-100%); opacity: 0; }
+}
+
+.data-stream {
+  position: absolute;
+  top: 0;
+  color: #5ffbd6;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  line-height: 1.2;
+  word-break: break-all;
+  white-space: pre-wrap;
+  width: 12px;
+  animation: dataDrift linear infinite;
+  pointer-events: none;
+}
+
+/* Custom sleek scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #041329;
+}
+::-webkit-scrollbar-thumb {
+  background: #1c2a41;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #38debb;
+}
