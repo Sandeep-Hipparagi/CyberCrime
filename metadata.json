@@ -1,0 +1,6 @@
+{
+  "name": "Citizen Financial Cyber Fraud Reporting Portal",
+  "description": "AI-powered rapid financial fraud reporting system inspired by cybercrime.gov.in (Helpline 1930). Designed for Gen Z and senior citizens with voice dictation, instant bank freeze, and screenshot auto-fill in under 60 seconds.",
+  "requestFramePermissions": ["microphone", "camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
